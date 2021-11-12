@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./build/tailwind.css"/>
+    <link rel="stylesheet" href="./build/app.css"/>
+    <title>Tailwind Css</title>
+</head>
+
+<!-- Code theo mobile-first -->
+
+<!-- Phần 1,2,3 -> Xây dựng giao diện -->
+<!-- 
+    Responsive trong Tailwind Css
+    - tailwind-class    (khai báo đầu tiên không có key đứng trước -> Mobile)
+    - sm:tailwind-class (lớn hơn 640px -> Tablet)
+    - md:tailwind-class (lớn hơn 768px)
+    - lg:tailwind-class (lớn hơn 1024px -> Laptop)
+    - xl:tailwind-class (lớn hơn 1280px -> Desktop)
+-->
+
+<!-- Phần 4 -> Trạng thái hover, focus, transform, transition và Selector như first-child, last-child -->
+<!-- 
+    + hover và focus có cách dùng giống nhau
+    + hover:tailwind-class -> Tự rê chuột vào chính nó
+    + focus:tailwind-class -> Tự click chuột vào chính nó
+    + breakpoint:hover:tailwind-class -> Khi dùng với responsive
+    + Giả sử ta rê chuột vào thẻ cha và muốn thẻ con hover thì thẻ cha phải có class group và cú pháp của thẻ con sẽ là (nếu có cả responsive): breakpoint:group-hover:tailwind-class
+    VD: parent: group
+        child: breakpoint:group-hover:tailwind-class
+    + Khi ta dùng tailwind-class disabled, thì trong thẻ phải có thuộc tính disabled thì nó mới áp dụng
+    + inset-0 : top,left,bottom,right đều là 0, content rỗng
+ -->
+
+ <!-- Phần 5 -> Dark mode -->
+
+<body>
+    <!-- Phần 1,2,3 -> Xây dựng giao diện -->
+    <!-- <div class="pt-12">
+        <h1 class="text-center text-[#ffa400] text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-5">
+            Live anywhere
+        </h1>
+        <h2 class="text-center font-light text-[#07a787] mb-35">
+            Keep calm & travel on
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-[37px] gap-y-7 lg:gap-y-0 max-w-6xl mx-auto px-[15px]">
+            <div>
+                <div class="h-96 mb-5">
+                    <img class="w-full h-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1496440737103-cd596325d314?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""/>
+                </div>
+                <h3 class="text-center font-medium text-lg mb-3">Enjoy the great cold</h3>
+                <span class="block text-center text-gray-400 text-sm">6,789 properties</span>
+            </div>
+            <div>
+                <div class="h-96 mb-5">
+                    <img class="w-full h-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1496440737103-cd596325d314?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""/>
+                </div>
+                <h3 class="text-center font-medium text-lg mb-3">Enjoy the great cold</h3>
+                <span class="block text-center text-gray-400 text-sm">6,789 properties</span>
+            </div>
+            <div>
+                <div class="h-96 mb-5">
+                    <img class="w-full h-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1496440737103-cd596325d314?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""/>
+                </div>
+                <h3 class="text-center font-medium text-lg mb-3">Enjoy the great cold</h3>
+                <span class="block text-center text-gray-400 text-sm">6,789 properties</span>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Phần 4 -> Trạng thái hover, focus, transform, transition và Selector như first-child, last-child -->
+    <!-- Hover -->
+    <!-- <div class="group p-10 border border-black">
+        <button class="inline-block py-3 px-10 m-5 text-white bg-[#817e9c] group-hover:bg-red-500 lg:group-hover:bg-yellow-300 transition-colors rounded-lg">
+            Confirm
+        </button>
+    </div> -->
+
+    <!-- Focus -->
+    <!-- <input type="text" class="py-3 px-3 border border-[#ccc] rounded-xl outline-none m-3 focus:bg-green-300 transition-all"/> -->
+
+    <!-- Motion-safe, disabled -->
+    <!-- <button class="inline-block py-3 px-10 m-5 text-white bg-[#817e9c] rounded-lg transition-all motion-safe:hover:scale-110 disabled:opacity-50" disabled>
+        Confirm
+    </button> -->
+
+    <!-- Checkbox -->
+    <!-- <input type="checkbox" class="appearance-none w-5 h-5 checked:bg-blue-600 checked:border-transparent border border-bg-gray-900" /> -->
+
+    <!-- before,after -->
+    <!-- <div before="" class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#eee] rounded-xl
+    relative 
+    before:content-[attr(before)] 
+    before:absolute
+    before:inset-0
+    before:bg-gray-500
+    before:rounded-xl
+    before:bg-current
+    before:opacity-25"
+    >
+        <ion-icon name="airplane-outline"></ion-icon>
+    </div> -->
+
+    <!-- Phần 5 -> Dark mode -->
+    <!-- <label for="toggle" class="inline-block cursor-pointer toggle-switch">
+        <input type="checkbox" name="toggle" id="toggle" class="hidden darkmode-input" />
+        <div class="w-[100px] h-[40px] border border-[#ccc] rounded-full fixed 
+        right-5 bottom-5 z-50 p-[5px] transition-colors">
+            <div class="w-7 h-7 bg-[#ccc] rounded-full transition-transform darkmode-spinner"></div>
+        </div>
+    </label>
+    <div class="mx-auto max-w-[1200px] grid grid-cols-4 gap-x-5 p-5">
+        <div class="px-5 py-8 rounded-lg border border-[#eee] text-center 
+        bg-white 
+        dark:bg-[#0F0D58]"
+        >
+            <img src="https://free3dicon.com/wp-content/uploads/2021/09/vr-headset_perspective_matte_s-2-300x300.png.webp" alt="VR Headset" class="mb-5 max-w-[100px] mx-auto"/>
+            <h3 class="text-lg font-semibold text-[#0F0D58] mb-6 dark:text-white">VR Headset</h3>
+            <div class="text-sm text-[#9191B4] leading-loose font-normal dark:text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda omnis mollitia excepturi adipisci laboriosam fuga explicabo ab libero nam, aliquam esse reiciendis ut rerum. Consequatur hic blanditiis nisi quia aut?
+            </div>
+        </div>
+    </div> -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- <script>
+        const toggleSwitch = document.querySelector(
+          '.toggle-switch input[type="checkbox"]'
+        );
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+          document.documentElement.setAttribute("class", currentTheme);
+          if (currentTheme === "dark") {
+            toggleSwitch.checked = true;
+          }
+        }
+        function switchTheme(e) {
+          if (e.target.checked) {
+            document.documentElement.setAttribute("class", "dark");
+            localStorage.setItem("theme", "dark");
+          } else {
+            document.documentElement.setAttribute("class", "light");
+            localStorage.setItem("theme", "light");
+          }
+        }
+        toggleSwitch.addEventListener("change", switchTheme);
+      </script> -->
+</body>
+</html>

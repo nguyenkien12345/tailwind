@@ -1,0 +1,49 @@
+    <!-- 
+        - npm init -y
+        - npm install -D tailwindcss postcss autoprefixer vite
+        - npx tailwindcss init -p
+        - npm run dev
+        - npx tailwindcss-cli build css/tailwind.css -o build/tailwind.css 
+        (Nó sẽ hiển thị tất cả các class mà tailwind đã build ra trong build/tailwind.css. Import file này vào html)
+     -->
+
+    <!-- 
+        Tạo ra folder css/tailwind.css. Dán đoạn code sau vào
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+    -->
+
+    <!-- 
+        Mỗi lần thêm, cập nhật file tailwind.config.js thì phải build lại project bằng câu lệnh:
+        npx tailwindcss -i css/tailwind.css -o build/tailwind.css --watch
+        Lưu ý chạy song song 2 câu lệnh npx tailwindcss -i css/tailwind.css -o build/tailwind.css --watch và npm run dev luôn
+    -->
+
+    <!--
+        Khi thêm câu lệnh mode: "jit" trong tailwind.config.js thì phải cập nhật purge thành
+          purge: [
+             './*.html',
+             './*.{js,jsx,ts,tsx,vue}',
+          ],
+    -->
+
+    <!--
+        ./ là vào thư mục hiện tại
+        **/ là vào tất cả các file trong thư mục
+    -->
+
+    <!--
+        Khi đã thêm câu lệnh mode: "jit" thì ta dùng như sau: text-[#ffa400] lúc này nó sẽ tự hiểu mã màu trong cặp ngoặc vuông [] luôn (bất cứ mã màu nào cũng được)-->
+    -->
+
+    <!--
+        Khi đã thêm jit vô rồi thì khi muốn sử dụng 1 giá trị nào đó ta đưa nó vào cặp ngoặc []
+        VD: text-[giá trị] -> text-[#ffa400]
+        Lưu ý nếu dùng giá trị dạng spacing thì ta phải thêm px
+        VD: text-[giá trị] -> text-[37px]
+    -->
+
+    <!--
+        group: Là thằng cha (thằng bao bọc 1 hoặc nhiều thằng con)
+    -->
